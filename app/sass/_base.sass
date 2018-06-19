@@ -1,0 +1,694 @@
+*
+	outline: none
+	box-sizing: border-box
+
+body
+	font: 300 13px/19px 'Montserrat', sans-serif
+	color: map-get($colors, black)
+
+h1
+	margin: 20px 0
+	font-size: 30px
+	line-height: 40px
+
+h2
+	margin: 20px 0
+	font-size: 30px
+	line-height: 40px
+
+h3
+	margin: 10px 0
+	font-weight: 600
+	font-size: 16px
+	line-height: 19px
+	text-transform: uppercase
+
+p
+	margin: 15px 0
+
+a
+	text-decoration: none
+
+.hidden
+	display: none!important
+
+.clearfix
+	&:after, &:before
+		display: table
+		content: ' '
+	&:after
+		clear: both
+
+.float-r
+	float: right
+
+.float-l
+	float: left
+
+.text-left
+	text-align: left
+
+.text-center
+	text-align: center
+
+.text-right 
+	text-align: right
+
+.text-upper
+	text-transform: uppercase
+
+.text-overflow
+	display: inline-block
+	width: 100%
+	white-space: nowrap
+	overflow: hidden
+	text-overflow: ellipsis
+
+/*for-img*/
+.for-img
+	text-align: center
+	overflow: hidden
+img
+	max-width: 100%
+	max-height: 100%
+	height: auto
+
+/*full-img*/
+.full-img 
+	position: relative
+	overflow: hidden
+	&:before 
+		display: block
+		content: ""
+	.cover-img
+		position: absolute
+		top: 0
+		left: 0
+		min-width: 100%
+		min-height: 100%
+		+object-fit(cover)
+
+/*card-img*/
+.card-img
+	position: relative
+	display: block
+	overflow: hidden
+	&:before
+		display: block
+		content: ''
+	img
+		position: absolute
+		left: 50%
+		top: 50%
+		transform: translate(-50%, -50%)
+		max-width: 100%
+		max-height: 100%
+		height: auto
+
+/*select*/
+.select
+	position: relative
+	width: 100%
+
+.select-list
+	display: none
+	position: absolute
+	top: 100%
+	left: 0
+	z-index: 30
+
+.select-option
+	cursor: pointer
+
+.select-option_selected
+	position: relative
+	margin: 0
+	padding-right: 15px
+	&:after
+		position: absolute
+		right: 0
+		top: 50%
+		transform: translateY(-50%)
+		display: block
+		content: ''
+		width: 0
+		height: 0
+		border-top: 4px solid map-get($colors, white)
+		border-left: 4px solid transparent
+		border-right: 4px solid transparent
+
+/*tabs ob JS*/
+.tab-toggle
+	display: inline-block
+	cursor: pointer
+
+.tab-content
+	display: none
+
+.tab-content_active
+	display: block
+
+.input-wrap
+	position: relative
+
+.btn
+	display: inline-block
+	width: auto
+	min-width: 206px
+	//height: 46px
+	padding: 13px 10px 14px 10px
+	background: map-get($colors, main)
+	border: none
+	text-align: center
+	font: 300 16px/19px 'Montserrat', sans-serif
+	color: map-get($colors, white)
+	cursor: pointer
+	transition: all .3s
+	&:hover
+		opacity: .8
+.btn_lg
+	width: 100%
+	min-width: inherit
+
+.check
+	li
+		position: relative
+		margin-bottom: 19px
+		padding-left: 28px
+		&:before
+			position: absolute
+			top: 4px
+			left: 0
+			display: block
+			content: ''
+			width: 13px
+			height: 9px
+			background: url(../img/check.png) no-repeat center
+
+.text_main
+	color: map-get($colors, main)
+
+body
+	display: flex
+	flex-direction: column
+
+.wrapper
+	position: relative
+	flex: 1 1 auto
+	display: flex
+	flex-direction: column
+	width: 100%
+	min-height: 100vh
+	padding-top: 68px
+	background: #fff
+
+.container
+	width: 100%
+	max-width: 1500px
+	margin: 0 auto
+	padding: 0 20px
+
+.content-wrapper
+	flex: 1 1 auto
+
+
+
+/*HEADER*/
+.header
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	padding: 14px 25px 16px 18px
+	background: map-get($colors, main)
+	color: map-get($colors, white)
+	z-index: 110
+.header-inner
+	display: flex
+	align-items: center
+	justify-content: flex-start
+.header-logo
+	flex: 0 0 205px
+	margin-right: 50px
+	img
+		display: block
+.header-wrap
+	flex: 0 1 100%
+.header-wrap-inner
+	flex: 0 1 100%
+	display: flex
+	align-items: center
+.nav
+	display: flex
+.nav-item
+	margin-right: 48px
+.nav-link
+	color: map-get($colors, white)
+	&:hover
+		text-decoration: underline
+.header-search
+	margin: 0 auto
+	.form-text
+		display: block
+		height: 38px
+		min-width: 317px
+		padding: 0 60px 0 30px
+		background: map-get($colors, white)
+		border: none
+		border-radius: 19px
+	.button
+		position: absolute
+		right: 23px
+		top: 50%
+		transform: translateY(-50%)
+		display: block
+		width: 14px
+		height: 14px
+		background: transparent url(../img/search-icon.png) no-repeat center
+		border: none
+		cursor: pointer
+
+.header-action
+	display: flex
+	align-items: center
+	justify-content: flex-end
+	margin-left: 42px
+	color: map-get($colors, white)
+.header-language
+	margin: 0 15px
+	a
+		color: inherit
+	ul
+		left: 50%
+		transform: translateX(-50%)
+		padding: 5px 10px
+		background: map-get($colors, main)
+.header-basket
+	margin: 0 10px
+.header-login
+	margin: 0 10px
+	a
+		color: map-get($colors, white)
+		&:hover
+			text-decoration: underline
+
+.mobile-burger
+	position: relative
+	display: none
+	width: 27px
+	height: 20px
+	z-index: 100
+	order: 2
+	span 
+		position: absolute
+		display: block
+		width: 100%
+		height: 4px
+		background: map-get($colors, white) 
+		border-radius: 2px
+	.top 
+		top: 0
+	.middle 
+		top: 8px
+	.bottom 
+		top: 16px
+.mobile-burger.active .top 
+	top: 10px
+	transform: rotate(225deg)
+.mobile-burger.active .middle 
+	top: 10px
+	opacity: 0
+.mobile-burger.active .bottom 
+	top: 10px
+	transform: rotate(-225deg)
+
+.header-search_mobile
+	display: none
+	width: 100%
+	padding: 15px
+	background: #ffffff
+	.form-text
+		width: 100%
+		border: 1px solid #bebdbd
+
+/*ASIDE*/
+.left-aside
+	position: fixed
+	top: 0
+	left: 0
+	display: block
+	width: 258px
+	height: 100%
+	padding: 91px 20px
+	background: map-get($colors, white)
+	z-index: 100
+	color: map-get($colors, black)
+	.show-aside
+		display: none
+	a
+		color: inherit
+		&:hover
+			text-decoration: underline
+	.acc-header
+		position: relative
+		display: block
+		width: 100%
+		padding: 8px 17px 9px 17px
+		cursor: pointer
+		&:hover
+			color: map-get($colors, main)
+			font-weight: 500
+		&:after
+			position: absolute
+			right: 17px
+			top: 50%
+			transform: translateY(-50%)
+			display: block
+			content: ''
+			width: 0
+			height: 0
+			border-top: 4px solid map-get($colors, black)
+			border-left: 4px solid transparent
+			border-right: 4px solid transparent
+	.acc-body
+		display: none
+		padding: 0 17px
+		li
+			padding: 5px 0 5px 10px
+
+/*CONTENT*/
+.content-inner
+	display: flex
+	margin-left: 258px
+	padding: 20px 37px 0 17px
+.content
+	flex: 0 1 100%
+.bunner
+	display: flex
+	justify-content: flex-start
+	align-items: center
+	min-height: 130px
+	margin-bottom: 34px
+	padding: 20px 0 24px
+	background: url(../img/bunner.png) no-repeat center
+	background-size: cover
+.bunner-title
+	margin: 0
+	padding: 0 33px
+	font: 29px/40px 'SDGeorgiaLight'
+	color: #7cb135
+	letter-spacing: 2.5px
+.bunner-subtitle
+	display: block
+	width: 100%
+	min-width: 463px
+	margin: 0
+	padding: 5px 33px
+	background: rgba(7,7,7,.35)
+	font: 16px/19px 'SDGeorgiaLight'
+	color: map-get($colors, white)
+	letter-spacing: .8px
+
+/*product*/
+.products .product-list
+	margin-top: -17px
+.product-list
+	display: flex
+	flex-wrap: wrap
+	justify-content: center
+	margin: 0 -17px
+.product-col
+	display: flex
+	width: 25%
+	padding: 0 17px
+.product-item
+	display: flex
+	flex-direction: column
+	width: 100%
+	margin: 17px 0
+	background: map-get($colors, white)
+	box-shadow: 0 0 15px 0 rgba(0,0,0,.35)
+	transition: all .3s
+	&:hover
+		box-shadow: 0 0 25px 0 rgba(0,0,0,.5)
+
+.product-img
+	border-bottom: 1px solid #cac6c6
+	&:before
+		padding-top: 67.15%
+.product-text
+	flex: 1 1 auto
+	padding: 19px 10px 12px
+	text-align: center
+.product-name
+	font: 400 15px/20px 'Montserrat', sans-serif
+	color: #393838
+.product-price
+	font: 400 26px/40px 'Montserrat', sans-serif
+	color: #4c8402
+
+/*sponsors*/
+.sponsors
+	display: flex
+	flex-wrap: wrap
+	align-items: center
+	margin: 15px -15px
+.sponsors-col
+	padding: 8px 14px 8px 15px
+	img
+		display: block
+
+
+
+.content-aside
+	flex: 0 0 26.4%
+	max-width: 340px
+	margin-left: 18px
+
+/*BREADCRUMBS*/
+.breadcrumbs
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	flex-wrap: wrap
+	font: 400 12px/20px 'Montserrat', sans-serif
+	color: map-get($colors, main)
+.breadcrumbs-link
+	display: inline-block
+	margin: 10px 0
+	color: map-get($colors, main)
+	text-decoration: underline
+	&:hover
+		text-decoration: none
+.breadcrumbs-sep
+	display: inline-block
+	margin: 10px 7px
+.breadcrumbs-link_current
+	color: #898888
+	text-decoration: none
+	cursor: default
+	pointer-events: none
+
+/*PRODUCT*/
+.product-title
+	margin: 11px 0
+.product-info
+	display: flex
+	align-items: flex-start
+	margin-bottom: 58px
+.product-image
+	flex: 0 0 30%
+	max-width: 273px
+	margin-right: 4%
+	background: #fafafa
+	border: 1px solid #d7d7d7
+	&:before
+		padding-top: 100%
+.product-descr
+	flex: 1 1 100%
+	color: #393838
+	max-width: 310px
+	.btn
+		margin-left: 26px
+
+.product-additional
+	padding-bottom: 29px
+	.tabs-header
+		display: flex
+		border-bottom: 3px solid #bebdbd
+	.tab-toggle
+		min-width: 175px
+		padding: 0 10px
+		text-align: center
+		font: 400 14px/44px 'Montserrat', sans-serif
+		color: #a3a3a3
+		&_active
+			background: #bebdbd
+			color: #fff
+	.tab-content 
+		padding: 13px 0
+	.table
+		width: 100%
+		font-weight: 300
+	.table-tr
+		display: flex
+		align-items: center
+		margin: 10px 0
+		&:last-child
+			margin-bottom: 0
+	.table-tr_header
+		margin-bottom: 14px
+		font-weight: 600
+		text-transform: uppercase
+	.name
+		flex: 1 1 100%
+		align-self: flex-start
+		padding-right: 20px
+	.code
+		flex: 0 0 150px
+		text-align: left
+		font-weight: 600
+	.price
+		flex: 0 0 100px
+		text-align: center
+		font-weight: 600
+	.number
+		flex: 0 0 128px
+		padding: 0 30px
+		input
+			display: block
+			width: 68px
+			height: 47px
+			background: #ffffff
+			text-align: center
+			border: 1px soldi #d7d7d7
+			font-size: 16px
+			color: #a3a3a3
+	.action
+		flex: 0 0 206px
+	.table-label
+		font-weight: 600
+
+.table-list
+	.table-wrap
+		margin: 0 -15px
+	.table
+		padding: 10px 15px
+	.table-wrap:nth-child(odd)
+		.table
+			background: #dcefc3
+
+/*FOOETR*/
+.footer
+	position: relative
+	min-height: 71px
+	margin-top: auto
+	padding: 14px 0 17px
+	background: map-get($colors, grey)
+	font: 300 13px/20px 'Montserrat', sans-serif
+	color: #212121
+	z-index: 110
+	a
+		color: inherit
+		&:hover
+			text-decoration: underline
+.footer-inner
+	display: flex
+	flex-wrap: wrap
+	justify-content: flex-start
+	align-items: center
+.footer-copy
+	width: 276px
+	padding: 0 37px
+	color: #545454
+.footer-block
+	min-width: 300px
+	padding-right: 20px
+.footer-label
+	font-weight: 500
+
+/*POPUP*/
+.popup-overlay
+	position: fixed
+	top: 0
+	height: 100%
+	left: 0
+	width: 100%
+	display: none
+	background: rgba(0,0,0,.59)
+	z-index: 200
+.popup
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+	display: inline-block
+	max-width: 95%
+	max-height: 95%
+	background: #ffffff
+	box-shadow: 0 0 12px 0 rgba(0,0,0,.18)
+	overflow-y: auto
+.popup-header
+	padding: 13px 50px 16px
+.popup-close
+	position: absolute
+	top: 13px
+	right: 14px
+	display: block
+	width: 15px
+	height: 15px
+	background: url(../img/close.png) no-repeat center
+	cursor: pointer
+.popup-title
+	text-align: center
+	font-weight: 400
+	letter-spacing: -.5px
+.popup-body
+	padding: 0 50px 15px
+
+.registration
+	max-width: 710px
+.login, .reset
+	max-width: 388px
+	button.btn
+		margin-top: 14px
+.redirect-action
+	display: flex
+	justify-content: space-between
+
+.form-row
+	display: inline-flex
+	flex-wrap: wrap
+	margin: 0 -27px
+.form-col-6
+	width: 50%
+	padding: 0 27px
+.form-col-12
+	width: 100%
+	padding: 0 27px
+.form-group
+	width: 100%
+	margin-bottom: 20px
+	p
+		margin: 18px 0
+		text-align: right
+		font-weight: 600
+		a
+			display: inline-block
+			margin-left: 5px
+			text-decoration: underline
+			color: map-get($colors, main)
+.form-label
+	display: block
+	margin: 5px 0
+	font-weight: 600	
+	color: #393838
+.form-text
+	display: block
+	width: 100%	
+	height: 47px
+	padding: 0 15px
+	background: #ffffff
+	border: 1px solid #d7d7d7

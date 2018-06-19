@@ -1,0 +1,162 @@
+@import "vars"
+
+@media screen and (max-width: 1365px)
+	.nav-item
+		margin-right: 20px
+	.header-action
+		margin-left: 0
+
+	.content-inner
+		padding: 20px 15px 0 15px
+	.product-list
+		margin: 0 -10px
+	.products .product-list
+		margin-top: -10px
+	.product-col
+		padding: 0 10px
+	.product-item
+		margin: 10px 0
+
+@media screen and (max-width: 1199px)
+	.header
+		padding: 15px
+	.header-logo 
+		flex: 0 0 180px
+		margin-right: 30px
+	.header-search .form-text
+		min-width: 200px
+	.header-login 
+		margin: 0 0 0 10px
+
+	.left-aside 
+		width: 210px
+		padding: 91px 10px
+		.acc-header
+			padding: 8px 10px 8px 5px
+		.acc-header:after
+			right: 0
+	.content-inner
+		margin-left: 210px
+
+
+	.product-additional 
+		.code
+			flex: 0 0 100px
+		.number
+			flex: 0 0 108px
+			padding: 0 20px
+		.action
+			flex: 0 0 150px
+			.btn
+				min-width: inherit
+				width: 100%
+	.table-list .table-wrap
+		margin: 0
+
+
+	.footer-copy 
+		width: 230px
+		padding: 0 20px
+	.footer-block
+		min-width: 230px
+
+@media screen and (max-width: 1024px)
+	.wrapper
+		padding-top: 63px
+	.header-inner
+		justify-content: space-between
+	.header-search
+		display: none
+	.header-search_mobile
+		display: block
+	.header-wrap
+		position: absolute
+		top: 100%
+		left: 0
+		width: 100%
+		display: none
+		padding: 20px 15px
+		background: map-get($colors, main)
+	.header-wrap-inner
+		flex-direction: column
+		align-items: flex-start
+	.nav
+		flex-direction: column
+	.nav-item
+		margin: 10px 0
+	.header-action
+		flex-direction: column
+		align-items: flex-start
+	.header-language, .header-basket, .header-login
+		margin: 10px 0
+	.header-language ul
+		position: relative
+		padding: 5px 0
+	.mobile-burger
+		display: block
+
+	.left-aside
+		position: static
+		width: 100%
+		padding: 0 15px
+	.show-aside
+		width: 100%
+		padding: 10px 15px 9px
+		background: #bababa
+		border-radius: 19px
+		text-align: center
+		color: #ffffff
+		text-transform: uppercase
+	.aside
+		display: none
+		padding: 10px 40px
+
+	.content-inner
+		flex-wrap: wrap
+		margin-left: 0
+	.content-aside
+		flex: 1 1 100%
+		max-width: none
+		margin-left: 0
+
+
+	.footer-copy, .footer-block
+		width: 100%
+		margin-bottom: 10px
+		padding: 0 15px
+		text-align: center
+
+@media screen and (max-width: 767px)
+	.content
+		width: 100%
+	.product-col
+		width: 50%
+	.table-wrap
+		overflow: auto
+		.table
+			width: 738px
+
+@media screen and (max-width: 575px)
+	.bunner-title
+		padding: 0 15px
+	.bunner-subtitle
+		padding: 0 8px
+		min-width: inherit
+	.product-col
+		width: 100%
+	.product-info
+		flex-wrap: wrap
+	.product-image
+		flex: 1 1 100%
+		max-width: none
+		margin: 0 0 20px 0
+	.product-descr
+		flex: 1 1 100%
+		max-width: none
+	.product-additional 
+		.tab-toggle
+			min-width: 115px
+
+@media screen and (min-width: 1025px)
+	.header-wrap
+		display: block!important
